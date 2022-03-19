@@ -4,8 +4,8 @@
         tabDescriptions = document.querySelectorAll('.design__descr'),
         tabImages = document.querySelectorAll('.design-images'),
         blockImages = document.querySelectorAll('.design-block__img'),
-        tabTitle = document.querySelectorAll('.design__title'),
-        tabHeader = document.querySelector('title'),
+        tabTitle = document.querySelectorAll('.design__title');
+
         changeContent = (array, value) => {
             array.forEach((elem) => {
                 if (elem.dataset.tabsField === value) {
@@ -20,11 +20,12 @@
         tabButton.addEventListener('click', (event) => {
             let dataValue = tabButton.dataset.tabsHandler;
 
-            tabTitle.forEach((title, indexTitle) => {
+            tabTitle.forEach((tabTitl, indexTitle) => {
                 if (index === indexTitle) {
-                    title.classList.remove('hidden');
+                    document.title = tabTitl;
+                    tabTitl.classList.remove('hidden');
                 } else {
-                    title.classList.add('hidden');
+                    tabTitl.classList.add('hidden');
                 }   
             });
 
